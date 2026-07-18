@@ -4,7 +4,7 @@ const workforce = [
   { id: "H-204", type: "Human employee", name: "Lena Ortiz", role: "Senior Platform Engineer", function: "Platform engineering", state: "Expected", risk: "08", image: "/lena-ortiz-engineer.png" },
   { id: "H-089", type: "Human employee", name: "Marcus Bennett", role: "HR Director", function: "People operations", state: "Expected", risk: "11", image: "/marcus-bennett-hr.png" },
   { id: "A-117", type: "AI agent", name: "Code Partner", role: "Coding Agent", function: "Software engineering", state: "Active", risk: "18", icon: "code", artwork: "/workforce-code-partner-generated-v2.png" },
-  { id: "A-308", type: "AI agent", name: "Resolve", role: "Customer Support Agent", function: "Customer support", state: "Observed", risk: "31", icon: "support", artwork: "/workforce-resolve-support-generated-v2.png" },
+  { id: "A-308", type: "AI agent", name: "Relay", role: "Customer Support Agent", function: "Customer support", state: "Threshold crossed", risk: "86", icon: "support", artwork: "/workforce-resolve-support-generated-v2.png", incident: "New external transcript route" },
 ];
 
 const novaAgents = [
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
         <div className="identity-grid">
           {workforce.map((identity) => (
-            <article key={identity.id} className={`identity-card ${identity.image ? "human-card" : "agent-card"}`}>
+            <article key={identity.id} className={`identity-card ${identity.image ? "human-card" : "agent-card"}${identity.incident ? " alert-card" : ""}`}>
               <div className="identity-top"><span>{identity.type}</span><span>{identity.id}</span></div>
               {identity.image ? (
                 <div className="identity-portrait" style={{ backgroundImage: `url(${identity.image})` }} role="img" aria-label={`Employee portrait of ${identity.name}`} />
@@ -109,6 +109,7 @@ export default function Home() {
               )}
               <h3>{identity.function}</h3>
               <div className="identity-person"><strong>{identity.name}</strong><span>{identity.role}</span></div>
+              {identity.incident && <a className="identity-incident" href="#behavior"><span>Baseline break / 09:31</span><strong>{identity.incident} <b aria-hidden="true">↘</b></strong></a>}
               <div className="identity-status"><span>{identity.state}</span><b>Risk {identity.risk}</b></div>
             </article>
           ))}
@@ -119,27 +120,27 @@ export default function Home() {
         <div className="behavior-copy">
           <p className="section-label">03 / Behavior intelligence</p>
           <h2>Know normal.<br />See intent.</h2>
-          <p>Static rules see events. Behavior intelligence understands the entity behind them—what it usually does, what changed, and why the sequence matters.</p>
-          <a href="#platform" className="under-link">See how it works <Arrow /></a>
+          <p>Relay normally reads assigned cases and drafts approved replies. Exabeam learned that baseline—then caught the moment it requested bulk transcript access and opened a new outbound route.</p>
+          <a href="#platform" className="under-link">Follow the detection <Arrow /></a>
         </div>
-        <div className="behavior-console" aria-label="Behavior risk timeline for an autonomous procurement agent">
+        <div className="behavior-console" aria-label="Behavior risk timeline showing customer support agent Relay crossing its behavioral threshold">
           <div className="console-header">
-            <div><span>Autonomous entity</span><strong>PROCURE-7</strong></div>
+            <div><span>Customer support agent</span><strong>RELAY / A-308</strong></div>
             <b>Risk score <em>86</em></b>
           </div>
           <div className="baseline">
             <span>Behavior baseline</span><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span>
             <div className="baseline-line">
-              <img src="/behavior-anomaly-chart.png" alt="Stable behavior baseline followed by a single sharp orange anomaly spike" width="1792" height="1024" />
-              <strong className="spike-label">Abnormal +74</strong>
+              <img src="/behavior-anomaly-chart.png" alt="Relay's stable customer support behavior baseline followed by a sharp threshold-crossing anomaly" width="1792" height="1024" />
+              <strong className="spike-label">Threshold +74</strong>
             </div>
           </div>
           <ol>
-            <li><time>09:14</time><span>Accesses approved vendor records</span><b className="normal">Expected</b></li>
-            <li><time>09:22</time><span>Requests elevated payment scope</span><b className="shift">Deviation</b></li>
-            <li><time>09:31</time><span>Creates first-time external destination</span><b className="risk">High risk</b></li>
+            <li><time>09:14</time><span>Reads assigned customer case history</span><b className="normal">Expected</b></li>
+            <li><time>09:22</time><span>Requests bulk transcript export scope</span><b className="shift">Deviation</b></li>
+            <li><time>09:31</time><span>Sends transcript bundle to new external destination</span><b className="risk">High risk</b></li>
           </ol>
-          <div className="console-foot"><span>Sequence correlated by Exabeam</span><span>3 signals / 1 trajectory</span></div>
+          <div className="console-foot"><span>Sequence correlated by Exabeam</span><span>Threshold crossed / 09:31</span></div>
         </div>
       </section>
 
