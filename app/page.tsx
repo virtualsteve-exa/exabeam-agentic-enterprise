@@ -44,6 +44,7 @@ export default function Home() {
           <span className="hero-scene hero-scene-2" aria-hidden="true" />
           <span className="hero-scene hero-scene-3" aria-hidden="true" />
           <span className="hero-scene hero-scene-4" aria-hidden="true" />
+          <span className="hero-scene hero-scene-5" aria-hidden="true" />
           <span className="hero-motion hero-glow" aria-hidden="true" />
           <span className="hero-motion hero-scan" aria-hidden="true" />
         </div>
@@ -57,22 +58,27 @@ export default function Home() {
           <div className="signal-chrome"><span>Live behavior story</span><i /></div>
           <div className="signal-stage" aria-hidden="true">
             <article className="signal-story signal-story-1">
-              <div><span>01 / Agent orchestration</span><b>Live</b></div>
+              <div><span>01 / Human + agent teaming</span><b>In command</b></div>
+              <strong>Human judgment.<br />Agent speed.</strong>
+              <p>People direct the mission while autonomous systems accelerate the work.</p>
+            </article>
+            <article className="signal-story signal-story-2">
+              <div><span>02 / Agent orchestration</span><b>Live</b></div>
               <strong>Every agent.<br />One context.</strong>
               <p>Exabeam connects human and agent activity into one explainable sequence.</p>
             </article>
-            <article className="signal-story signal-story-2">
-              <div><span>02 / Distributed work</span><b>Protected</b></div>
+            <article className="signal-story signal-story-3">
+              <div><span>03 / Distributed work</span><b>Protected</b></div>
               <strong>Work moves.<br />Policy follows.</strong>
               <p>Delegated actions stay tied to the employee, intent, and authority behind them.</p>
             </article>
-            <article className="signal-story signal-story-3">
-              <div><span>03 / Unified identity</span><b>Verified</b></div>
+            <article className="signal-story signal-story-4">
+              <div><span>04 / Unified identity</span><b>Verified</b></div>
               <strong>Human or not.<br />Trust is earned.</strong>
               <p>People, services, and autonomous agents share one behavioral trust model.</p>
             </article>
-            <article className="signal-story signal-story-4">
-              <div><span>04 / Continuous access</span><b>Watching</b></div>
+            <article className="signal-story signal-story-5">
+              <div><span>05 / Continuous access</span><b>Watching</b></div>
               <strong>Risk changes.<br />Trust adapts.</strong>
               <p>Protection follows the worker—and their agent—across every device and location.</p>
             </article>
