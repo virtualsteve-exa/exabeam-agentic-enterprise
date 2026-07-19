@@ -130,7 +130,7 @@ export default function Home() {
       <section className="behavior" id="behavior">
         <div className="behavior-copy">
           <p className="section-label">03 / Behavior intelligence</p>
-          <h2>Know normal.<br />See intent.</h2>
+          <h2>Know nor<span className="kern-rm">m</span>al.<br />See intent.</h2>
           <p>Relay normally reads assigned cases and drafts approved replies. Exabeam learned that baseline—then caught the moment it requested bulk transcript access and opened a new outbound route.</p>
           <a href="#platform" className="under-link">Follow the detection <Arrow /></a>
         </div>
