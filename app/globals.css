@@ -142,5 +142,44 @@ footer small{font-size:10px;line-height:1.5}
   .principles{grid-template-columns:1fr;padding:100px 22px}.outcomes{padding:90px 22px}.outcome-grid{grid-template-columns:1fr}.outcome-grid article,.outcome-grid article:first-child{padding:35px 0;border-right:0;border-bottom:1px solid var(--line)}
   .closing{min-height:650px;padding:90px 22px}.closing h2{font-size:73px}.closing-orbit{width:120vw;right:-70vw;top:10vw}footer{grid-template-columns:1fr;padding:45px 22px}footer small{grid-column:auto;margin-top:25px}
 }
-@media(max-width:560px){.hero-scene{display:none;animation:none}.hero-scene-1{display:block;opacity:1;transform:none}.hero-motion{display:none}.signal-story{display:none;animation:none}.signal-story-1{display:block;opacity:1;transform:none}.identity-grid{grid-template-columns:1fr}.identity-grid article{min-height:580px}.manifesto h2,.workforce-head h2,.behavior h2,.nova h2,.principles h2{font-size:54px}.behavior-console{padding:16px}.behavior-console li{grid-template-columns:45px 1fr}.behavior-console li b{grid-column:2;justify-self:start}.console-foot{gap:15px}.agent-flow{grid-template-columns:1fr}.agent-flow article,.agent-flow article:last-child{min-height:570px;border:0}.outcome-grid strong{font-size:90px}.closing h2{font-size:62px}}
+@media(max-width:560px){
+  .hero{min-height:1180px;padding:105px 22px 560px}
+  .hero-visual{background-image:url('/deck-cover-agentic-workforce-v2.png');background-position:center bottom;background-size:cover}
+  .hero-visual::after{background:linear-gradient(180deg,rgba(239,238,232,.99) 0%,rgba(239,238,232,.96) 32%,rgba(239,238,232,.72) 49%,rgba(239,238,232,.08) 68%,rgba(17,17,15,.15) 100%)}
+  .hero-scene{display:block;inset:0;background-size:cover;animation-duration:30s;animation-timing-function:linear;animation-iteration-count:infinite}
+  .hero-scene-1{background-image:url('/deck-cover-agentic-workforce-v2.png');background-position:center bottom;animation-name:heroFirstScene;animation-delay:0s}
+  .hero-scene-2{background-image:url('/deck-open-ecosystem-engineer-v2.png');background-position:center 42%;animation-name:heroScenes;animation-delay:6s}
+  .hero-scene-3{background-image:url('/deck-proactive-security-team-v2.png');background-position:center 38%;animation-name:heroScenes;animation-delay:12s}
+  .hero-scene-4{background-image:url('/soc-team-agentic-v3.png');background-position:center 27%;animation-name:heroScenes;animation-delay:18s}
+  .hero-scene-5{background-image:url('/hero-agentic-mobile-coworker-v4.png');background-position:69% center;animation-name:heroScenes;animation-delay:24s}
+  .hero-copy h1{font-size:clamp(55px,16.5vw,70px);line-height:.84}
+  .hero-copy>p:not(.overline){max-width:34rem;font-size:16px;line-height:1.55}
+  .hero-signal{left:22px;right:22px;bottom:22px;width:auto}
+  .hero-motion{display:none}
+  .signal-story{display:block;animation-duration:30s;animation-timing-function:linear;animation-iteration-count:infinite}
+  .signal-story-1{animation-name:signalFirstStory;animation-delay:0s}
+  .signal-story-2{animation-name:signalStories;animation-delay:6s}
+  .signal-story-3{animation-name:signalStories;animation-delay:12s}
+  .signal-story-4{animation-name:signalStories;animation-delay:18s}
+  .signal-story-5{animation-name:signalStories;animation-delay:24s}
+  .identity-grid{grid-template-columns:1fr}
+  .identity-grid article{min-height:580px}
+  .identity-portrait{height:360px;background-position:center 24%}
+  .agent-symbol{height:auto;aspect-ratio:3/2;background:#171716}
+  .agent-symbol.generated>img{object-fit:contain;object-position:center}
+  .manifesto h2,.workforce-head h2,.behavior h2,.nova h2,.principles h2{font-size:54px}
+  .behavior-console{padding:16px}
+  .behavior-console li{grid-template-columns:45px 1fr}
+  .behavior-console li b{grid-column:2;justify-self:start}
+  .console-foot{gap:15px}
+  .soc{min-height:900px;padding-bottom:84px}
+  .soc-image{background-image:url('/soc-team-agentic-v3.png');background-position:center 30%;background-size:cover}
+  .soc-image::after{background:linear-gradient(180deg,rgba(8,8,7,.22),rgba(8,8,7,.08) 32%,rgba(8,8,7,.84) 78%,rgba(8,8,7,.95))}
+  .agent-flow{grid-template-columns:1fr}
+  .agent-flow article,.agent-flow article:last-child{min-height:570px;border:0}
+  .nova-agent-icon{height:auto;aspect-ratio:3/2;background:#e8e6df}
+  .nova-agent-icon>img{object-fit:contain;object-position:center}
+  .outcome-grid strong{font-size:90px}
+  .closing h2{font-size:62px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-visual,.hero-scene,.hero-motion,.signal-story,.signal-chrome i,.soc-image,.identity-card,.identity-portrait,.agent-symbol,.agent-symbol.generated>img,.identity-grid h3,.identity-person,.identity-top span:first-child,.identity-status,.code-mark,.support-agent,.agent-flow article,.nova-agent-icon,.nova-agent-icon>img,.agent-flow h3,.agent-flow p,.agent-step-head>span,.agent-flow small,.principle-list article,.principle-list article::before,.principle-list article::after,.principle-list article>span,.principle-list h3,.principle-list p{animation:none;transition:none}.hero-motion,.hero-scene,.signal-story{display:none}.hero-scene-1,.signal-story-1{display:block;opacity:1;transform:none}}
