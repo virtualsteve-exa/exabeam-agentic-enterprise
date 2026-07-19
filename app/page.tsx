@@ -1,10 +1,10 @@
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 const workforce = [
-  { id: "H-204", type: "Human employee", name: "Lena Ortiz", role: "Senior Platform Engineer", function: "Platform engineering", state: "Expected", risk: "08", image: "/lena-ortiz-engineer.png" },
-  { id: "H-089", type: "Human employee", name: "Marcus Bennett", role: "HR Director", function: "People operations", state: "Expected", risk: "11", image: "/marcus-bennett-hr.png" },
-  { id: "A-117", type: "AI agent", name: "Code Partner", role: "Coding Agent", function: "Software engineering", state: "Active", risk: "18", icon: "code", artwork: "/workforce-code-partner-generated-v2.png" },
-  { id: "A-308", type: "AI agent", name: "Relay", role: "Customer Support Agent", function: "Customer support", state: "Threshold crossed", risk: "86", icon: "support", artwork: "/workforce-resolve-support-generated-v2.png", incident: "New external transcript route" },
+  { id: "H-204", type: "Human employee", name: "Lena Ortiz", role: "Senior Platform Engineer", function: "Platform engineering", state: "Expected", risk: "08", image: "/lena-ortiz-engineer.png", behaviors: ["Usual repository and CI/CD access", "Deployments within approved windows"] },
+  { id: "H-089", type: "Human employee", name: "Marcus Bennett", role: "HR Director", function: "People operations", state: "Expected", risk: "11", image: "/marcus-bennett-hr.png", behaviors: ["HRIS access from a managed device", "Employee records match regular patterns"] },
+  { id: "A-117", type: "AI agent", name: "Code Partner", role: "Coding Agent", function: "Software engineering", state: "Active", risk: "18", icon: "code", artwork: "/workforce-code-partner-generated-v2.png", behaviors: ["Changes limited to assigned repositories", "Tool calls follow approved workflows"] },
+  { id: "A-308", type: "AI agent", name: "Relay", role: "Customer Support Agent", function: "Customer support", state: "Threshold crossed", risk: "86", icon: "support", artwork: "/workforce-resolve-support-generated-v2.png", incident: "New external transcript route", behaviors: ["Transcript export used a new destination", "Volume exceeded its learned baseline"] },
 ];
 
 const novaAgents = [
@@ -115,6 +115,9 @@ export default function Home() {
               )}
               <h3>{identity.function}</h3>
               <div className="identity-person"><strong>{identity.name}</strong><span>{identity.role}</span></div>
+              <ul className="identity-behaviors" aria-label={`${identity.name} observed behaviors`}>
+                {identity.behaviors.map((behavior) => <li key={behavior}>{behavior}</li>)}
+              </ul>
               {identity.incident && <a className="identity-incident" href="#behavior"><span>Baseline break / 09:31</span><strong>{identity.incident} <b aria-hidden="true">↘</b></strong></a>}
               <div className="identity-status"><span>{identity.state}</span><b>Risk {identity.risk}</b></div>
             </article>
