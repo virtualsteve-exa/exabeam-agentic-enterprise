@@ -8,10 +8,10 @@ const workforce = [
 ];
 
 const novaAgents = [
-  ["01", "Threat Scoring", "Scores and ranks emerging risk", "threat", "Active", "/nova-threat-scoring-generated.png"],
-  ["02", "Investigation", "Correlates evidence into cases", "investigation", "Ready", "/nova-investigation-generated.png"],
-  ["03", "Analyst Assistant", "Guides analysts through the next best action", "assistant", "Available", "/nova-analyst-assistant-generated.png"],
-  ["04", "Search", "Finds signals across every data tier", "search", "Listening", "/nova-search-generated.png"],
+  ["01", "Threat Scoring", "Scores and ranks emerging risk", "threat", "Active", "/nova-threat-scoring-generated.png", ["Applies machine learning and business context", "Prioritizes activity needing immediate review"]],
+  ["02", "Investigation", "Correlates evidence into cases", "investigation", "Ready", "/nova-investigation-generated.png", ["Creates case summaries and analyzes threats", "Identifies attack vectors and recommends next steps"]],
+  ["03", "Analyst Assistant", "Guides analysts through the next best action", "assistant", "Available", "/nova-analyst-assistant-generated.png", ["Answers case-specific questions in real time", "Returns relevant insights without manual searches"]],
+  ["04", "Search", "Finds signals across every data tier", "search", "Listening", "/nova-search-generated.png", ["Queries users, hosts, and logs in natural language", "Translates searches into EQL aligned with CIM"]],
 ];
 
 export default function Home() {
@@ -168,12 +168,15 @@ export default function Home() {
           <p>Exabeam Nova deploys specialized security agents across the investigation lifecycle. They gather, correlate, and prepare. Your team decides.</p>
         </div>
         <div className="agent-flow" aria-label="Exabeam Nova agent workflow">
-          {novaAgents.map(([number, name, description, icon, status, artwork], index) => (
+          {novaAgents.map(([number, name, description, icon, status, artwork, capabilities], index) => (
             <article key={name}>
               <div className="agent-step-head"><span>{number}</span><i className={index < 3 ? "complete" : "active"} /></div>
               <div className={`nova-agent-icon ${icon}`} aria-hidden="true"><img src={artwork} alt="" /></div>
               <h3>{name}</h3>
               <p>{description}</p>
+              <ul className="agent-capabilities">
+                {capabilities.map((capability) => <li key={capability}>{capability}</li>)}
+              </ul>
               <small>{status}</small>
             </article>
           ))}
