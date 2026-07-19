@@ -144,14 +144,14 @@ footer small{font-size:10px;line-height:1.5}
 }
 @media(max-width:560px){
   .hero{min-height:1180px;padding:105px 22px 560px}
-  .hero-visual{background-image:url('/mobile-hero-agent-orchestration-v1.png');background-position:center;background-size:cover}
+  .hero-visual{background-image:url('/mobile-hero-agent-orchestration-v1.png');background-position:center bottom;background-size:auto 125%}
   .hero-visual::after{background:linear-gradient(180deg,rgba(239,238,232,.99) 0%,rgba(239,238,232,.96) 32%,rgba(239,238,232,.72) 49%,rgba(239,238,232,.08) 68%,rgba(17,17,15,.15) 100%)}
   .hero-scene{display:block;inset:0;background-size:cover;animation-duration:30s;animation-timing-function:linear;animation-iteration-count:infinite}
-  .hero-scene-1{background-image:url('/mobile-hero-agent-orchestration-v1.png');background-position:center;animation-name:heroFirstScene;animation-delay:0s}
-  .hero-scene-2{background-image:url('/mobile-hero-distributed-work-v1.png');background-position:center;animation-name:heroScenes;animation-delay:6s}
-  .hero-scene-3{background-image:url('/mobile-hero-unified-identity-v1.png');background-position:center;animation-name:heroScenes;animation-delay:12s}
-  .hero-scene-4{background-image:url('/mobile-hero-continuous-access-v1.png');background-position:center;animation-name:heroScenes;animation-delay:18s}
-  .hero-scene-5{background-image:url('/mobile-hero-human-agent-soc-v1.png');background-position:center;animation-name:heroScenes;animation-delay:24s}
+  .hero-scene-1{background-image:url('/mobile-hero-agent-orchestration-v1.png');background-position:center bottom;background-size:auto 125%;animation-name:heroFirstScene;animation-delay:0s}
+  .hero-scene-2{background-image:url('/mobile-hero-distributed-work-v1.png');background-position:center bottom;background-size:auto 140%;animation-name:heroScenes;animation-delay:6s}
+  .hero-scene-3{background-image:url('/mobile-hero-unified-identity-v1.png');background-position:center bottom;background-size:auto 135%;animation-name:heroScenes;animation-delay:12s}
+  .hero-scene-4{background-image:url('/mobile-hero-continuous-access-v1.png');background-position:center bottom;background-size:cover;animation-name:heroScenes;animation-delay:18s}
+  .hero-scene-5{background-image:url('/mobile-hero-human-agent-soc-v1.png');background-position:center bottom;background-size:auto 155%;animation-name:heroScenes;animation-delay:24s}
   .hero-copy h1{font-size:clamp(55px,16.5vw,70px);line-height:.84}
   .hero-copy>p:not(.overline){max-width:34rem;font-size:16px;line-height:1.55}
   .hero-signal{left:22px;right:22px;bottom:22px;width:auto}
